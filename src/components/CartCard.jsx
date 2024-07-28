@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { removeitems } from '../redux/Cart/cartSlice';
 
 function CartCard({ product }) {
-  const { id, title, price, category, image, rating } = product;
+  const { id, title, price, category, image, rating, Quantity } = product;
   const dispatch = useDispatch();
 
   return (
@@ -23,7 +23,7 @@ function CartCard({ product }) {
                 <h3 className="text-lg font-semibold leading-snug sm:pr-8">{category}</h3>
               </div>
               <div className="text-right">
-                <p className="text-lg font-semibold">${price}</p>
+                <p className="text-lg font-semibold">${price * Quantity}</p>
               </div>
             </div>
             <div className="flex  text-sm">
@@ -43,7 +43,7 @@ function CartCard({ product }) {
                 </span>
               </button>
               <div className="ml-auto">
-                <p className="text-lg font-semibold ml-auto"> Quantity: {4}</p>
+                <p className="text-lg font-semibold ml-auto"> Quantity: {Quantity}</p>
               </div>
             </div>
           </div>

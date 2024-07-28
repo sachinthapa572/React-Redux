@@ -4,7 +4,7 @@ import { additems } from '../redux/Cart/cartSlice';
 import { useDispatch } from 'react-redux';
 
 function ProductCard({ ProductData }) {
-  const { title, price, category, description, image, rating } = ProductData;
+  const {  title, price, category, description, image, rating } = ProductData;
   const dispatch = useDispatch();
 
   const handelclick = () => {

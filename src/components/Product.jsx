@@ -8,8 +8,10 @@ import { STATUSES } from '../redux/Cart/ProductSlice';
 
 function Product() {
   //! Local storage implement hane
-  let dispatch = useDispatch();
-  let { data: product, status } = useSelector((state) => state.product);
+  const dispatch = useDispatch();
+  const { data: product, status } = useSelector((state) => state.product);
+  const searchdata = useSelector((state) => state.product.searchdata);
+  // console.log(searchdata);
   useEffect(() => {
     dispatch(fetchProduct());
     console.log('dispatch sucessfully !!');
@@ -28,9 +30,17 @@ function Product() {
         </div>
       ) : (
         <section className="product">
-          {product.map((currElem) => (
-            <ProductCard key={currElem.id} ProductData={currElem} />
-          ))}
+          {product &&
+            product
+              .filter((currElem) => {
+                if (searchdata.length === 0) {
+                  return currElem;
+                } else {
+                  console.log(currElem.title.toLowerCase());
+                  return currElem.title.toLowerCase().includes(searchdata.toLowerCase());
+                }
+              })
+              .map((currElem) => <ProductCard key={currElem.id} ProductData={currElem} />)}
         </section>
       )}
     </>
