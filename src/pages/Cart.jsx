@@ -9,13 +9,12 @@ function Cart() {
   const FinalPrice = parseInt(
     products.reduce((acc, currElem) => acc + currElem.price * currElem.Quantity, 0)
   );
-  console.log(FinalPrice);
+  
   return (
     <div className="mx-auto flex max-w-3xl flex-col space-y-4 p-6 px-2 sm:p-10 sm:px-2">
       <h2 className="text-3xl font-bold">Your cart</h2>
       <p className="mt-3 text-sm font-medium text-gray-700">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eius repellat ipsam, sit
-        praesentium incidunt.
+        Your items in the cart 
       </p>
       <ul className="flex flex-col divide-y divide-gray-200">
         {products.map((product) => (

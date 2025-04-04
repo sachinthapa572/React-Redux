@@ -3,9 +3,7 @@ function ErrorPage() {
   const navigate = useNavigate();
   return (
     <div>
-      {/*
-    Graphic from https://www.opendoodles.com/
-*/}
+    
 
       <div className="grid h-screen place-content-center bg-white px-4">
         <div className="text-center">

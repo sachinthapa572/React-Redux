@@ -15,9 +15,9 @@ function Addtodo({ todoid, setTodoid }) {
     inputRef.current.focus();
 
     if (todoid) {
-      console.log('humm');
+      // console.log('humm');
       const updatevalue = todos.find((todo) => todo.id === todoid);
-      console.log(updatevalue);
+      // console.log(updatevalue);
       if (updatevalue) {
         setInput(updatevalue.text);
         inputRef.current.focus();

@@ -29,17 +29,18 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element:<SignIn/>
+        element: <SignIn />,
       },
       {
         path: '/signin',
-        element:<SignUp/>
-      }
+        element: <SignUp />,
+      },
     ],
   },
 ]);
 
 function App() {
+  
   return (
     <>
       <RouterProvider router={router} />
